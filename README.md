@@ -19,3 +19,12 @@
 - Https = if we to work on ssl then we can
 - Tree shaking - remove unused code
 - Different dev and production bundles
+
+Two types of export/import
+ - Default export/import
+ export default <component_name>
+ import <component_name> from "path"
+
+ - Named export/import
+ export const variable_name;
+ import {variable_name} from "path"
