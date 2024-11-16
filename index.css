@@ -31,7 +31,7 @@
 .res-card {
   padding: 5px;
   width: 200px;
-  height: auto;
+  max-height: 400px;
   margin: 5px;
 }
 
@@ -52,6 +52,85 @@
 
 .res-logo {
   width: 100%;
-  /* height: 30%;
-    object-fit: cover; */
+  height: 100px;
+  object-fit: cover;
+}
+
+.shimmer-card{
+    padding: 5px;
+    width: 200px;
+    height: 300px;
+    margin: 5px;
+    background-color: rgba(240, 238, 210, 0.549);
+    border-radius: 10px;
+}
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.shimmer-image{
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    background-color: rgba(236, 235, 197, 0.549);
+}
+
+.login-btn{
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(138, 43, 226);
+    color: white;
+    margin-top: -10px;
+}
+
+.filter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search{
+  margin-top: -10px;
+}
+
+.search-box{
+  padding: 10px;
+  border-radius: 5px;
+  height: 1rem;
+  border: none;
+  background-color: rgb(255, 255, 233);
+}
+
+.search-btn{
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(226, 43, 83);
+  color: white;
+  margin-top: 10px;
+}
+
+.user-card{
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.count-btn{
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100px;
+  height: 10px;
+  border: none;
+  background-color: rgb(228, 47, 86);
+  color: rgb(234, 223, 223);
+  margin-top: 10px;
 }
