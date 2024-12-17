@@ -96,3 +96,12 @@ export default UserClass
 
 <!-- for React lifecycle methods -->
 https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+
+# Redux Toolkit
+- Install @reduxjs/toolkit and react-redux
+- Build our store 
+- Connect our store to our app
+- Slice (cart slice)
+- dispatch (action)
+- selector

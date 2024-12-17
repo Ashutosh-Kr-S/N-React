@@ -1,4 +1,4 @@
-import React from "react";
+import React,{lazy,Suspense, useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -7,6 +7,12 @@ import {createBrowserRouter, RouterProvider , Outlet} from "react-router-dom";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import ResturantMenu from "./components/ResturantMenu";
+import UserContext from "./Utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./Utils/appStore";
+import Cart from "./components/Cart";
+// import Grocery from "./components/Grocery";
+
 
 // // React.createElement => object =>  on renedreing its becomes an HTMLElement
 // // const heading  = React.createElement("h1",{id:"heading"},"Namaste React 🚀");
@@ -46,13 +52,31 @@ import ResturantMenu from "./components/ResturantMenu";
 
 // Lets Start
 
+const Grocery = lazy(() => import("./components/Grocery"));
+
 const AppLayout = () => {
+
+const [userName, setUserName] = useState();
+
+  useEffect(() => {
+    // API call for user info.
+    const data ={
+      name:"Ashutosh"
+    };
+    setUserName(data.name);
+  }, []);
+
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-      //footer
-    </div>
+    <Provider store={appStore}> 
+      <UserContext.Provider value={{loggedInUser : userName , setUserName}}>
+        <div className="app">
+          {/* <UserContext.Provider value={{loggedInUser : "Elon musk"}}> */}
+            <Header />
+          {/* </UserContext.Provider> */}
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -74,8 +98,16 @@ const appRouter = createBrowserRouter([
         element:<Contact />
       },
       {
+        path:"/grocery",
+        element:<Suspense fallback={<h1>Loading...</h1>}><Grocery /></Suspense>
+      },
+      {
         path:"/resturant/:redId",           // dynamic route
         element:<ResturantMenu />
+      },
+      {
+        path:"/cart",
+        element:<Cart />
       }
     ],
     errorElement:<Error />

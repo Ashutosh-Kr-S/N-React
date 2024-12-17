@@ -1,4 +1,8 @@
-.header {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -133,4 +137,4 @@
   background-color: rgb(228, 47, 86);
   color: rgb(234, 223, 223);
   margin-top: 10px;
-}
+} */
