@@ -1,5 +1,6 @@
 # Recat projcet 🚀
 
+deployment link: https://order-up-tan.vercel.app/
 
 # Parcel
 - Dev Build
