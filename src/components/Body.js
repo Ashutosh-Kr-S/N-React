@@ -27,7 +27,8 @@ const Body = () => {
   const fetchData = async () => {
     try {
       const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65200&lng=77.16630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.65200&lng=77.16630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        "https://foodfire.onrender.com/api/restaurants?lat=12.9351929&lng=77.624480699999991&page_type=DESKTOP_WEB_LISTING"
       );
       const json = await data.json();
 
